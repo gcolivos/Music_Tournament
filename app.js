@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 /** ---------- REQUIRE NODE MODULES ---------- **/
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -52,9 +54,9 @@ app.use('/private', isLoggedIn, private);
 app.use('/slipnumbers',slipnumbers);
 app.use('/*', index);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 
 /** ---------- SERVER START ---------- **/
 app.listen(port, function () {
-  console.log('Now running on port ', 3000);
+  console.log('Now running on port ', 5000);
 });

@@ -10,7 +10,7 @@
     googleAuth: {
       clientId: '',
       clientSecret: '',
-      callbackUrl: 'http://localhost:3000/auth/google/callback',
+      callbackUrl: '',
     },
 
     sessionVars: {

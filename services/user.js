@@ -10,7 +10,7 @@
  var pool = require('../modules/pool');
 
  var UserService = {
-   findUserById: function (id, callback) {
+   findUserBySpotifyId: function (id, callback) {
      console.log('this is the id', id);
      // User.findById(id, function (err, user) {
      pool.connect(function(err,connection,done){

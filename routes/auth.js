@@ -21,10 +21,9 @@ var passport = require('../auth/passport');
  * See {@link https://developers.google.com/identity/protocols/OpenIDConnect#authenticationuriparameters}
  * for info on more authentication parameters that might be used here.
  */
-router.get('/google', passport.authenticate('google',
+router.get('/spotify', passport.authenticate('spotify',
   {
-    scope: ['openid', 'email', 'https://www.googleapis.com/auth/calendar'],
-    prompt: 'select_account',
+    scope: ['user-read-private', 'user-read-email']
   })
 );
 /**
@@ -36,7 +35,7 @@ router.get('/google', passport.authenticate('google',
  * IMPORTANT: URL--the first parameter below--must match
  * callbackUrl in {@link config/auth}.
  */
-router.get('/google/callback', passport.authenticate('google',
+router.get('/callback', passport.authenticate('spotify',
   {
     successRedirect: '/private', // take them to their private data
     failureRedirect: '/#!/redirect', // take them back home to try again

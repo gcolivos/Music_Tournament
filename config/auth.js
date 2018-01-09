@@ -7,14 +7,14 @@
   * @module config/auth
   */
   var authConfigs = {
-    googleAuth: {
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      callbackUrl: process.env.CALLBACK_URL,
+    spotifyAuth: {
+      clientId: process.env.SPOTIFY_API_KEY,
+      clientSecret: process.env.SPOTIFY_SECRET,
+      callbackUrl: process.env.SPOTIFY_CALLBACK_URL,
     },
 
     sessionVars: {
-      secret: process.env.SECRET,
+      secret: 'hello',
     },
   };
 

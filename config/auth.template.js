@@ -7,10 +7,10 @@
   * @module config/auth
   */
   var authConfigs = {
-    googleAuth: {
+    spotifyAuth: {
       clientId: '',
       clientSecret: '',
-      callbackUrl: 'http://localhost:3000/auth/google/callback',
+      callbackUrl: '',
     },
 
     sessionVars: {

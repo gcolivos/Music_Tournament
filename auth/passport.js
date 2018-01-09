@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 /**
  * We configure our instance of passport in this file.
  * We must specify:
@@ -10,9 +12,13 @@
  *
  * @module auth/passport
  */
+// SECRET KEYS
+var appKey = process.env.SPOTIFY_API_KEY;
+var appSecret = process.env.SPOTIFY_SECRET;
+var appCallback = process.env.SPOTIFY_CALLBACK_URL;
  /** ---------- REQUIRE NODE MODULES ---------- **/
 var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth2').Strategy;
+var SpotifyStrategy = require('passport-spotify').Strategy;
 /** ---------- REQUIRE CUSTOM APP MODULES ---------- **/
 var config = require('../config/auth.js');
 
@@ -27,7 +33,7 @@ passport.serializeUser(function (user, done) {
 
 // deserialize the user from the session and provide user object
 passport.deserializeUser(function (id, done) {
-  UserService.findUserById(id, function (err, user) {
+  UserService.findUserBySpotifyId(id, function (err, user) {
     if (err) {
       return done(err);
     }
@@ -36,20 +42,19 @@ passport.deserializeUser(function (id, done) {
   });
 });
 /** ---------- PASSPORT STRATEGY DEFINITION ---------- **/
-passport.use('google', new GoogleStrategy({
-  // identify ourselves to Google and request Google user data
-  clientID: config.googleAuth.clientId,
-  clientSecret: config.googleAuth.clientSecret,
-  callbackURL: config.googleAuth.callbackUrl,
+passport.use('spotify', new SpotifyStrategy({
+  // identify ourselves to Spotify and request Spotify user data
+  clientID: appKey,
+  clientSecret: appSecret,
+  callbackURL: appCallback,
 }, function (token, refreshToken, profile, done) {
   // Google has responded
-  // console.log('this is everything in the profile:', profile);
+  console.log('this is everything in the profile:', profile);
   // does this user exist in our database already?
-  UserService.findUserByGoogleEmail(profile.email, function (err, user) {
+  UserService.findUserBySpotifyId({ spotifyId: profile.id }, function (err, user) {
       if (err) {
         return done(err);
       }
-
       if (user) { // user does exist!
         UserService.updateWithToken(token, profile.id,user);
         return done(null, user);
