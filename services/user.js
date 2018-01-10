@@ -22,7 +22,7 @@ var UserService = {
         return callback(err, null);
 
       } else {
-        connection.query("SELECT * FROM users WHERE id=$2", [id], function (err, user) {
+        connection.query("SELECT * FROM users WHERE id=$1", [id], function (err, user) {
           done();
           if (err) {
             console.log(err);
@@ -91,7 +91,7 @@ var UserService = {
 
     pool.connect(function (err, connection, done) {
       console.log('in first pool.connect');
-      connection.query("INSERT INTO users (name,email,google_id,token,status) VALUES ($1,$2,$3,$4,$5)", [name, email, id, token, true], function (err, response) {
+      connection.query("INSERT INTO users (spotify_id, name, token, status, email) VALUES ($1,$2,$3,$4,$5)", [id, name, token, true, email], function (err, response) {
         done();
         console.log('in first query');
         if (err) {
@@ -99,7 +99,7 @@ var UserService = {
           return callback(err, null);
         }
         else {
-          connection.query("SELECT * FROM users WHERE google_id=$1", [id], function (err, users) {
+          connection.query("SELECT * FROM users WHERE spotify_id=$1", [id], function (err, users) {
             console.log('In second query');
             done();
             if (err) {
@@ -125,13 +125,13 @@ var UserService = {
     // });
   },
 
-  updateWithToken: function (token, googleId, user) {
+  updateWithToken: function (token, spotifyId, user) {
     pool.connect(function (err, connection, done) {
       if (err) {
         console.log(err);
       }
       else {
-        connection.query('UPDATE users SET token=$1, google_id=$2 WHERE id=$3', [token, googleId, user.id], function (err) {
+        connection.query('UPDATE users SET token=$1, spotify_id=$2 WHERE id=$3', [token, spotifyId, user.id], function (err) {
           done();
           if (err) {
             console.log(err);

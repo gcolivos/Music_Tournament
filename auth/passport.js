@@ -57,7 +57,7 @@ passport.use('spotify', new SpotifyStrategy({
         return done(err);
       }
       if (user) { // user does exist!
-        UserService.updateWithToken(token, profile.id,user);
+        UserService.updateWithToken(token, profile.id, user);
         return done(null, user);
       }
 
