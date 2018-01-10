@@ -49,6 +49,7 @@ passport.use('spotify', new SpotifyStrategy({
   callbackURL: appCallback,
 }, function (token, refreshToken, profile, done) {
   // Google has responded
+  console.log("the token is " + token + " and the refreshToken is " + refreshToken);
   console.log('this is everything in the profile:', profile);
   // does this user exist in our database already?
   UserService.findUserBySpotifyId({ spotifyId: profile.id }, function (err, user) {
@@ -60,18 +61,18 @@ passport.use('spotify', new SpotifyStrategy({
         return done(null, user);
       }
 
-      //user does not exist in our database and we don't want them to
-      done(err);
+      // //user does not exist in our database and we don't want them to
+      // done(err);
       // // user does not exist in our database, let's create one!
-      // UserService.createGoogleUser(profile.id, token, profile.displayName,
-      //   profile.emails[0].value, /* we take first email address */
-      //   function (err, user) {
-      //     if (err) {
-      //       return done(err);
-      //     }
-      //
-      //     return done(null, user);
-      //   });
+      UserService.createSpotifyUser(profile.id, token, profile.displayName,
+        profile.emails[0].value, /* we take first email address */
+        function (err, user) {
+          if (err) {
+            return done(err);
+          }
+      
+          return done(null, user);
+        });
     });
 
 }));
