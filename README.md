@@ -1,84 +1,124 @@
-# Westonka SOAR
+Music Tournament
+Guillermo C Olivos
+December 17, 2017 | Version 1
+Document Objectives
+The purpose of this document is to provide detailed documentation about the Music Tournament application I will be building for my Prime Solo Project. It will include such details as:
+ 
+All Features described, how the app works
+Technology stack used (Frameworks, Libraries), including any 3rd party APIs/web services
+Milestones and rough schedule
+Assumptions made during the scoping process
+Application Overview
+Music Tournament is a full-stack web application that allows you to create dynamic music tournaments that populate music tracks in an easy to listen to and score fashion. It provides an interface to curate songs to compete in the tournament. It allows you to listen to pairs of songs in a matchup and provide votes while matchups are “live”, and then tabulates results and advances winners.
 
-Westonka SOAR is a full-stack web application that helps automate the process of keeping track of students’ SOAR slips, and the reward drawings for teachers and administrators.  SOAR slips are a tool for positive behavior reinforcement represented as a slip of paper indicating when students have demonstrated “Safety”, “Own It”, “Achieve”, and “Respect”.  Students will be able to enter a new SOAR slip that they have received into the application. Students will also see a count of how many slips they have received to date. Administrators will have a separate view to determine how many slips have been given to students and the ability to complete a prize drawing using the application, which will select a slip id number from the slips that have been awarded to students from the desired time period.  
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-To run this code, you will first need to install [Node.js](https://nodejs.org/en/)
-
-You will also need to install Postico, or another Ui for postgreSQL.
-
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-1. Clone this repository
-
-2. Install Node.js
-
-3. In terminal, cd into the folder where this repository is
-```
-ex:
-$ cd westonka_soar
-```
-
-4. In terminal, use 'npm install' to get all of the necessary dependencies
-```
-$ npm install
-```
-
-5. Copy queries from the data.sql file and execute queries.
-note: you must create tables in this order
-  1. homerooms
-  2. users
-  3. slips
-
-6. To get the code running, in terminal type 'node app.js'
-```
-$ node app.js
-```
-
-7. In your preferred browser, go to
-```
-localhost:3000
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Views
 
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Node.js](https://nodejs.org/en/)
-* [Express](https://expressjs.com/)
-* [Angular](https://angularjs.org/)
-* [Passport](http://passportjs.org/)
-* [pSQL](https://www.postgresql.org/)
-* [Google OAuth](https://www.npmjs.com/package/passport-google-oauth-2)
-* [Bootstrap](http://getbootstrap.com/)
-* [jsPDF](https://github.com/MrRio/jsPDF)
-* [csvtojson](https://www.npmjs.com/package/csvtojson)
 
 
-## Authors
-
-* **Charlie Garnaas** - [CharGar](https://github.com/CharGar)
-* **Droo Hastings** - [Mong005e](https://github.com/Mong005e)
-* **Tiffany Love** - [tiffanylove](https://github.com/tiffanylove)
-* **Abby Sepple** - [AbbySepple](https://github.com/AbbySepple)
-* **Alayna Buysse** - [AlaynaGrace](https://github.com/AlaynaGrace)
 
 
-## Acknowledgments
 
-* Thank you to Andrew at Hilltop Primary School for giving us the opportunity to work on this project
-* Thank you to our instructors for teaching us and helping with difficult bugs
-* Thank you to our cohort (Psi) for all of the support and the help
+
+
+
+
+
+
+
+
+On the left is a search bar to look up songs. Clicking the arrow adds the song to the playlist on the right, which populates as you fill it out. The playlist gets created in the Spotify profile of whomever creates the tournament, so if you decide on some songs but not all of them and want to come back to it later, that could be an option.
+
+
+
+
+The days/round thing is a stretch goal, for MVP I’m going to set it up so admin’s can advance tournament rounds.
+
+
+
+
+
+Above is a modal window that pops up when you go to score a matchup
+
+Once a song advances, you can click on where it used to be in the bracket to reveal this page, which will be mapped to a ‘/:id’ that maps to the matchup id’s from my schema
+
+
+
+
+
+Example of Archived Tournament:
+
+Project Features and Schedule
+Features are completed, working features from the above listing. Think carefully about the order you will need to build things and when you expect to be done with them. The purpose of this section is to consider the overall timeline and how much work really needs to get done. The Due Date is your best guess and may change. (There should be many more than 3 features.)
+ 
+Feature
+Estimated Due Date
+Stage (MVP, Base, Stretch
+Build User Profile and Authentication Using Spotify Password
+12/22/17
+MVP
+Establish Database Schemas AND Queries
+12/26/17
+MVP
+Build Bracket Generator Logic
+12/29/17
+MVP
+Build Bracket Progression Logic Including Votes
+1/3/17
+MVP
+ Build Playlist Creator API on Site
+1/4/17
+Base
+Build Modals of Two Song Matchups for Voting
+1/4/17
+Base
+Build out Time Advancing option for Cron
+1/10/17
+Base
+Build Record of Top Voted Songs for User Profile
+1/7/17
+Stretch
+Build Out User Comment Functionality for Tournaments
+1/9/17
+Stretch
+Figure out authentication for Public vs. Private tournaments and how that could work
+1/10/17
+Stretch
+Browsers
+Application will fully support browsers listed below. All browsers or versions not listed below are considered out of scope.
+ 
+Browser Name
+Version
+ Google Chrome
+Version 63.0.3239.84 (Official Build) (64-bit)
+
+
+
+ 
+Assumptions
+I am able to digest and understand the Spotify API options and associated technologies in order to build functionality live on app. Resources currently consulting include:
+https://github.com/thelinmichael/spotify-web-api-node
+https://developer.spotify.com/web-api/tutorial/
+I will be able to commit a significant amount of time over break to do this
+The Spotify API functionality will not significantly change in the next 4 weeks
+Embedded playlists using the API will be free for anyone to listen to in a similar way that hardcoding the embed code for a playlist currently works
+Entity Relationship Diagrams
+
+
+Technologies
+Angular
+Node
+Express
+Spotify Web API
+Spotify Passport
+SQL
+Angular Routes
+Bootstrap
+
+Stretch Goals
+In addition to just allowing users to participate in tournaments and vote, I want to build out a list of the songs they voted highest for to be stored on their profile.
+Additional statistics around how certain songs or artists do across many tournaments (like in the far future, being able to see an Artist or Song profile to see how it scored and where it exited, something like that.)
+Ensure that the two song playlists that are being generated for a given match are deleted once the match is completed, otherwise whoever created the tournament is going to end up with a whole bunch of two song playlists on their personal Spotify account
+Store a Sweet 16 playlist attached to archived tournaments
+Pull Artist images/artwork to decorate the bracket.
+Cool CSS effects
