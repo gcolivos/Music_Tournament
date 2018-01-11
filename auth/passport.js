@@ -28,7 +28,7 @@ var UserService = require('../services/user');
 
 // serialize the user onto the session
 passport.serializeUser(function (user, done) {
-  done(null, user.id);
+  done(null, user.spotify_id);
 });
 
 // deserialize the user from the session and provide user object
@@ -48,15 +48,18 @@ passport.use('spotify', new SpotifyStrategy({
   clientSecret: appSecret,
   callbackURL: appCallback,
 }, function (token, refreshToken, profile, done) {
-  // Google has responded
+  // Spotify has responded
   console.log("the token is " + token + " and the refreshToken is " + refreshToken);
   console.log('this is everything in the profile:', profile);
   // does this user exist in our database already?
-  UserService.findUserBySpotifyId({ spotifyId: profile.id }, function (err, user) {
+  UserService.findUserBySpotifyId({ spotify_id: profile.id }, function (err, user) {
       if (err) {
+        console.log("the findUserBySpotifyId in Passport errored out");
         return done(err);
       }
       if (user) { // user does exist!
+        console.log ("User does exist, we will update her with a new token");
+        console.log("The user is " + user.name)
         UserService.updateWithToken(token, profile.id, user);
         return done(null, user);
       }

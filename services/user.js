@@ -3,8 +3,8 @@
  *
  * @module services/user
  *
- * @function findUserById finds a User by their unique Mongo id
- * @function findUserBySpotifyId finds a User by their Google id
+ * @function findUserBySpotifyId finds a User by their unique Spotify id
+ * @function findUserBySpotifyId finds a User by their Spotify id
  * @function create a User that will be authenticated by Google
  */
 var pool = require('../modules/pool');
@@ -12,8 +12,10 @@ var pool = require('../modules/pool');
 var UserService = {
   findUserBySpotifyId: function (id, callback) {
     console.log('this is the id', id)
-    var id = id.spotifyId
-    console.log('this is the new id after pulling it out of the object,' + id);
+    if (id !== id.spotify_id){
+      var id = id.spotify_id
+      console.log('this is the new id after pulling it out of the object,' + id);  
+    }
     // User.findById(id, function (err, user) {
     pool.connect(function (err, connection, done) {
       console.log('in findById pool connect');
@@ -22,7 +24,7 @@ var UserService = {
         return callback(err, null);
 
       } else {
-        connection.query("SELECT * FROM users WHERE id=$1", [id], function (err, user) {
+        connection.query("SELECT * FROM users WHERE spotify_id=$1", [id], function (err, user) {
           done();
           if (err) {
             console.log(err);
@@ -44,14 +46,14 @@ var UserService = {
     // });
   },
 
-  findUserByGoogleEmail: function (email, callback) {
+  findUserByEmail: function (email, callback) {
     pool.connect(function (err, connection, done) {
       if (err) {
         console.log('there was an error in finding the person', err);
         return callback(err, null);
       }
       else {
-        console.log('in findUserByGoogleId pool connect with no errors');
+        console.log('in findUserBySpotifyId pool connect with no errors');
         connection.query("SELECT * FROM users WHERE email=$1", [email], function (error, user) {
           done();
           if (error) {
@@ -59,7 +61,7 @@ var UserService = {
             return callback(error, null);
           }
           else {
-            console.log('this is the user found by google email', user.rows[0]);
+            console.log('this is the user found by email', user.rows[0]);
             return callback(null, user.rows[0]);
           }
         });
@@ -109,7 +111,7 @@ var UserService = {
             }
             else {
               console.log(users);
-              return callback(null, users.rows[0]);
+              return callback(null, users.rows);
             }
           });
         }
@@ -125,13 +127,13 @@ var UserService = {
     // });
   },
 
-  updateWithToken: function (token, spotifyId, user) {
+  updateWithToken: function (token, spotify_id, user) {
     pool.connect(function (err, connection, done) {
       if (err) {
-        console.log(err);
+        console.log(err);``
       }
       else {
-        connection.query('UPDATE users SET token=$1, spotify_id=$2 WHERE id=$3', [token, spotifyId, user.id], function (err) {
+        connection.query('UPDATE users SET token=$1 WHERE spotify_id=$2 RETURNING *', [token, spotify_id], function (err, result) {
           done();
           if (err) {
             console.log(err);
