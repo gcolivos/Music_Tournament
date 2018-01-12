@@ -33,7 +33,7 @@ passport.serializeUser(function (user, done) {
 
 // deserialize the user from the session and provide user object
 passport.deserializeUser(function (id, done) {
-  UserService.findUserBySpotifyId(id, function (err, user) {
+  UserService.findAndDeserializeUser(id, function (err, user) {
     if (err) {
       return done(err);
     }

@@ -46,7 +46,7 @@ var UserService = {
     // });
   },
 
-  findUserByEmail: function (email, callback) {
+  findAndDeserializeUser: function (id, callback) {
     pool.connect(function (err, connection, done) {
       if (err) {
         console.log('there was an error in finding the person', err);
@@ -54,14 +54,14 @@ var UserService = {
       }
       else {
         console.log('in findUserBySpotifyId pool connect with no errors');
-        connection.query("SELECT * FROM users WHERE email=$1", [email], function (error, user) {
+        connection.query("SELECT * FROM users WHERE spotify_id=$1", [id], function (error, user) {
           done();
           if (error) {
             console.log(error);
             return callback(error, null);
           }
           else {
-            console.log('this is the user found by email', user.rows[0]);
+            console.log('this is the user found to deserialize', user.rows[0]);
             return callback(null, user.rows[0]);
           }
         });
