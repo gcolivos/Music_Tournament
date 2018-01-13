@@ -8,13 +8,10 @@ var session = require('express-session');
 var passport = require('./auth/passport');
 var configs = require('./config/auth');
 var index = require('./routes/index');
-var admin = require('./routes/private/admin');
-var teacher = require('./routes/private/teacher');
-var student = require('./routes/private/student');
+var user = require('./routes/private/user');
 var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
-var slipnumbers = require('./routes/slipnumbers');
 // var database = require('./utils/database');
 /** ---------- EXPRESS APP CONFIG ---------- **/
 var app = express();
@@ -48,10 +45,6 @@ app.use(passport.session());
 /** ---------- ROUTES ---------- **/
 app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
-// app.use('/teacher', teacher);
-// app.use('/student', student);
-// app.use('/admin', admin);
-app.use('/slipnumbers',slipnumbers);
 app.use('/*', index);
 
 var port = process.env.PORT || 5000;

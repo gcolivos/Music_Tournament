@@ -1,6 +1,6 @@
+
 <!-- menue div -->
 <div class="admin-bar">
-  <!-- <div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:20px;'> -->
   <div class="admin-buttons">
     <a href="#!admins" style="text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;" class="btn adminB" role="button">Home</a>
     <!-- </div> -->
@@ -20,35 +20,16 @@
     </div>
   </div>
 </div>
-</div>
 <!-- end menue div -->
-</div>
+<h1 style= 'font-family:iceland;text-align: center; color: white;'class="shimmer">Welcome, {{sc.username}}!</h1>
+<img class="img-responsive center-block" ng-src="{{sc.pic}}" style="max-height:250px"></img>
 
 
-<!-- content div -->
-
-  <br />
-  <div class="row" style='background: whitesmoke; width:75%; height: 40em; margin: 0 auto; border-radius: 4px 4px 4px 4px;box-shadow:2px 2px black;'>
-    <div class="col-md-auto" style='text-align: center;'>
-      <h2 style="color: #3E3838;"> Welcome Back {{ac.username}}</h2>
-
-      <h2 style="color: #3E3838;">Year To Date Slip Count Is: {{ac.allSlips}}</h2>
-      <div style= 'width: 120px; height: 120px; text-align:center;' class="pic">
-
-
-        <img style='width: 20em; height: 20em; display: block; margin-left: 280%;' src='public/assets/styles/westonkD.png'></img>
-
-      </div>
-
-      </div>
-      </div>
-
-
-
-
-
-
-
-
-
-<!-- end of main div -->
+<div class="form-group" style= ' text-align: center;'>
+  <label style = 'font-family:iceland;color: white;' for="usr">What is your slip number?</label>
+  <input style="border-radius: 5px 5px 5px 5px;"type="text" class="center-block" id="usr" ng-model="sc.slipKey" placeholder="Enter your key here.....">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>S</label>&nbsp;<input type="checkbox" name="" ng-model="sc.s" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>&nbsp;O</label>&nbsp;<input type="checkbox" name="" ng-model="sc.o" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>&nbsp;A</label>&nbsp;<input type="checkbox" name="" ng-model="sc.a" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>&nbsp;R</label>&nbsp;<input type="checkbox" name="" ng-model="sc.r" value="">
+  <br>

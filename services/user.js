@@ -78,7 +78,7 @@ var UserService = {
     // });
   },
 
-  createSpotifyUser: function (id, token, name, email, callback) {
+  createSpotifyUser: function (id, token, name, email, photo, callback) {
     // var user = new User();
     // console.log('this is what the user looks like at first',user);
     // user.googleId = id;
@@ -93,7 +93,7 @@ var UserService = {
 
     pool.connect(function (err, connection, done) {
       console.log('in first pool.connect');
-      connection.query("INSERT INTO users (spotify_id, name, token, status, email) VALUES ($1,$2,$3,$4,$5)", [id, name, token, true, email], function (err, response) {
+      connection.query("INSERT INTO users (spotify_id, name, token, status, email, image) VALUES ($1,$2,$3,$4,$5,$6)", [id, name, token, true, email, photo], function (err, response) {
         done();
         console.log('in first query');
         if (err) {
@@ -127,13 +127,13 @@ var UserService = {
     // });
   },
 
-  updateWithToken: function (token, spotify_id, user) {
+  updateWithToken: function (token, spotify_id, photo, user) {
     pool.connect(function (err, connection, done) {
       if (err) {
         console.log(err);``
       }
       else {
-        connection.query('UPDATE users SET token=$1 WHERE spotify_id=$2 RETURNING *', [token, spotify_id], function (err, result) {
+        connection.query('UPDATE users SET token=$1, image=$2 WHERE spotify_id=$3', [token, photo, spotify_id], function (err, result) {
           done();
           if (err) {
             console.log(err);
