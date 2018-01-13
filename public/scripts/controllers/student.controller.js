@@ -12,6 +12,7 @@ console.log('this is the studentController');
       vm.username = response.data.name;
       vm.email = response.data.email;
       vm.id = response.data.id;
+      vm.image = response.data.image;
 
       if(response.data.admin !== true && response.data.teacher !== true){
         $location.path('/students');

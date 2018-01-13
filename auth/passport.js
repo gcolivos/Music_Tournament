@@ -60,7 +60,7 @@ passport.use('spotify', new SpotifyStrategy({
       if (user) { // user does exist!
         console.log ("User does exist, we will update her with a new token");
         console.log("The user is " + user.name)
-        UserService.updateWithToken(token, profile.id, user);
+        UserService.updateWithToken(token, profile.id, profile.photos[0], user);
         return done(null, user);
       }
 
@@ -68,7 +68,7 @@ passport.use('spotify', new SpotifyStrategy({
       // done(err);
       // // user does not exist in our database, let's create one!
       UserService.createSpotifyUser(profile.id, token, profile.displayName,
-        profile.emails[0].value, /* we take first email address */
+        profile.emails[0].value, profile.photos[0], /* we take first email address */
         function (err, user) {
           if (err) {
             return done(err);
