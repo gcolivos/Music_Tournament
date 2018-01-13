@@ -1,5 +1,5 @@
-googleAuthApp.controller('studentController', ['$http', '$scope', '$timeout', 'AuthFactory', '$location', function ($http, $scope, $timeout, AuthFactory, $location) {
-  console.log('this is the studentController');
+googleAuthApp.controller('userController', ['$http', '$scope', '$timeout', 'AuthFactory', '$location', function ($http, $scope, $timeout, AuthFactory, $location) {
+  console.log('this is the userController');
   var vm = this;
   var authFactory = AuthFactory;
 
@@ -14,7 +14,7 @@ googleAuthApp.controller('studentController', ['$http', '$scope', '$timeout', 'A
         vm.id = response.data.id;
         vm.image = response.data.image;
 
-        $location.path('/students');
+        $location.path('/users');
 
 
       } else { // is not logged in on server

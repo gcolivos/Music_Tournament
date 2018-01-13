@@ -16,9 +16,9 @@ $routeProvider
     .when('/redirect', {
       templateUrl: 'public/views/redirect.html'
     })
-    .when('/students', {
-      templateUrl: '/public/views/student.html',
-      controller: "studentController as sc"
+    .when('/users', {
+      templateUrl: '/public/views/user.html',
+      controller: "userController as sc"
     })
     .otherwise({
       redirectTo: '/login'

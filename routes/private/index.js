@@ -6,12 +6,12 @@
 var express = require('express');
 var router  = express.Router();
 
-var student = require ('./student');
+var user = require ('./user');
 
-router.use('/student', student);
+router.use('/user', user);
 
 router.get('/', function (req, res) {
-    res.redirect('/#!/students'); // they made it!
+    res.redirect('/#!/users'); // they made it!
 });
 
 module.exports = router;
