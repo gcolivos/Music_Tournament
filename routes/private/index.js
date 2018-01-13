@@ -8,9 +8,7 @@ var router  = express.Router();
 
 var student = require ('./student');
 
-var isStudent = require('../../utils/checkStudentStatus');
-
-router.use('/student', isStudent, student);
+router.use('/student', student);
 
 router.get('/', function (req, res) {
     res.redirect('/#!/students'); // they made it!
