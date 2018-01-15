@@ -23,7 +23,7 @@ var passport = require('../auth/passport');
  */
 router.get('/spotify', passport.authenticate('spotify',
   {
-    scope: ['user-read-private', 'user-read-email']
+    scope: ['user-read-private', 'user-read-email', 'user-library-read', 'user-top-read', 'user-read-recently-played', 'playlist-read-private', 'playlist-read-collaborative' ]
   })
 );
 /**

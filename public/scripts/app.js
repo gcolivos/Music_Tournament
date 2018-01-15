@@ -18,7 +18,11 @@ $routeProvider
     })
     .when('/users', {
       templateUrl: '/public/views/user.html',
-      controller: "userController as sc"
+      controller: "userController as uc"
+    })
+    .when('/tournament', {
+      templateUrl: '/public/views/tournament.html',
+      controller: "tournamentController as tc"
     })
     .otherwise({
       redirectTo: '/login'

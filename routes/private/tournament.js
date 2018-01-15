@@ -1,7 +1,7 @@
 /**
  * Provides basic route for user view
  *
- * @module routes/private user
+ * @module routes/private profile
  */
 
 
@@ -14,7 +14,7 @@ var pool = require('../../modules/pool');
 
 
 router.get('/',function(req,res){
-  console.log('base user router.get');
+  console.log('base tournament router.get');
 
     if(err){
       console.log(err);
@@ -24,7 +24,6 @@ router.get('/',function(req,res){
       res.send(200);
     }
   });
-
 
 
 module.exports = router;
