@@ -885,3 +885,7 @@ li.game{
   .tournamentBackground {
     color: white;
   }
+
+  .songPlayer {
+    align:right;
+  }
