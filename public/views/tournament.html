@@ -39,13 +39,24 @@
   <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px'
     class="dropbtn btn adminB">Click To Advance</button> -->
 
-<div class="tournamentBackground">
+<div>
   <h2 style='text-align: center; color: white;font-family:iceland;font-size:80px;'>Rolling Stones' Top 16 Rock Songs All Time</h2>
   <h4 style='text-align: center; color: white;font-family:iceland;font-size:80px;'>Music Tournament</h4>
   <main id="tournament">
-    <ul class="round round-1">
+    <ul class="round round-1 container-fluid">
+        <div class="row">
+            <div class="col-md-4 tourneyHeader">
+              <H1> Round 1 Matchups</h1>
+            </div>
+            <div class="col-md-4 tourneyHeader">
+              <H1>Voting</H1>
+            </div>
+            <div class="col-md-4 tourneyHeader">
+              <H1>Your Pick</H1>
+            </div>
+          </div>
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-4">
           <li class="game game-top winner">
             <span>1 Seed: Like A Rolling Stone</span>
           </li>
@@ -54,36 +65,51 @@
             <iframe src="https://open.spotify.com/embed/track/3AhXZa8sUQht0UEdBJgpGc" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
           <li class="game game-spacer">{{score}}</li>
-          <li class="game game-bottom ">
+          <li class="game game-bottom">
             <span>16 Seed: I Want To Hold Your Hand</span>
           </li>
           <div class="songPlayer">
             <iframe src="https://open.spotify.com/embed/track/4pbG9SUmWIvsROVLF0zF9s" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
         </div>
-        <div class="col-4">
-          <H3>Current Score</H3>
+        <div class="col-md-4">
+            <label class='pulse-button' style='font-size:40px;color: white;'>Song 1</label>&nbsp;
+            <input type="checkbox" ng-model="song1" ng-init="song1=false">
+            <label class='pulse-button' style='font-size:40px;color: white;'>Song 2</label>&nbsp;
+            <input type="checkbox" ng-model="song2" ng-init="song2=false">
         </div>
-        <div class="col-4">
-          <H3>Results</H3>
+        <div class="col-md-4">
+          <ng-if="song1">Song 1 Advances</ng-if>
+          <ng-if="song2">Song 2 Advances</ng-if>
         </div>
       </div>
 
-      <li class="spacer">&nbsp;</li>
+      <li class="spacer"></li>
 
-      <li class="game game-top winner">
-        <span>8 Seed: Hey Jude</span>
-      </li>
-      <div class="songPlayer">
-        <iframe src="https://open.spotify.com/embed/track/0aym2LBJBk9DAYuHHutrIl" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      </div>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">
-        <span>9 Seed: Smells Like Teen Spirit</span>
-      </li>
-      <div class="songPlayer">
-        <iframe src="https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      </div>
+      <div class="row">
+          <div class="col-md-4">
+            <li class="game game-top winner">
+              <span>8 Seed: Hey Jude</span>
+            </li>
+            <li class="game game-spacer">{{score}}</li>
+            <div class="songPlayer">
+              <iframe src="https://open.spotify.com/embed/track/0aym2LBJBk9DAYuHHutrIl" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+            <li class="game game-spacer">{{score}}</li>
+            <li class="game game-bottom">
+              <span>9 Seed: Smells Like Teen Spirit</span>
+            </li>
+            <div class="songPlayer">
+              <iframe src="https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <H1></H1>
+          </div>
+          <div class="col-md-4">
+            <H1></H1>
+          </div>
+        </div>
 
       <li class="spacer">&nbsp;</li>
 

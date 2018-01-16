@@ -843,7 +843,7 @@ main{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  width:200px;
+  /* width:400px; */
   list-style:none;
   padding:0;
 }
@@ -882,14 +882,14 @@ li.game{
     border-top:1px solid #aaa;
   }
 
-  .tournamentBackground {
-    color: white;
-  }
-
   .songPlayer {
-    align:right;
+    margin-left:100px;
   }
 
   #tournament{
     color: white;
+  }
+
+  .tourneyHeader{
+    text-align: center;
   }
