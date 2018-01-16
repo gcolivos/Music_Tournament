@@ -889,3 +889,7 @@ li.game{
   .songPlayer {
     align:right;
   }
+
+  #tournament{
+    color: white;
+  }
