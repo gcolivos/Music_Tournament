@@ -235,7 +235,7 @@ p a:hover {
   transform-style: preserve-3d;
 }
 #whiteHawk {
-  animation: spin 5s linear;
+  animation: spin 5s infinite linear;
 }
 @keyframes spin {
   0% {
@@ -886,10 +886,17 @@ li.game{
     margin-left:100px;
   }
 
-  #tournament{
+  .tournament{
     color: white;
+    text-decoration-color: white;
   }
 
   .tourneyHeader{
     text-align: center;
+    color: white;
+  }
+
+  .archiveGroup{
+    border-style: solid;
+    border-color: white; 
   }

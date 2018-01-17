@@ -24,6 +24,10 @@ $routeProvider
       templateUrl: '/public/views/tournament.html',
       controller: "tournamentController as tc"
     })
+      .when('/archive', {
+        templateUrl: '/public/views/archive.html',
+        controller: "archiveController as ac"
+    })
     .otherwise({
       redirectTo: '/login'
     });

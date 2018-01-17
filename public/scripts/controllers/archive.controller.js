@@ -1,9 +1,9 @@
-googleAuthApp.controller('tournamentController', ['$http', '$scope', '$timeout', 'AuthFactory', '$location', 'TourneyBuilder', function ($http, $scope, $timeout, AuthFactory, $location, TourneyBuilder) {
+googleAuthApp.controller('archiveController', ['$http', '$scope', '$timeout', 'AuthFactory', '$location', 'archiveService', function ($http, $scope, $timeout, AuthFactory, $location, ArchiveService) {
   console.log('this is the tournamentController');
   var vm = this;
   var authFactory = AuthFactory;
-  vm.tourneyBuilder = TourneyBuilder;
-  vm.getTourney = TourneyBuilder.getTourney;
+  vm.archiveTourneys = archiveTourneys;
+  vm.getArchives = archiveTourneys.getArchives;
 
   authFactory.isLoggedIn()
     .then(function (response) {

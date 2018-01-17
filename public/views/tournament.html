@@ -4,19 +4,18 @@
     <a href="#!users" style="text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;"
       class="btn adminB" role="button">Profile</a>
     <!-- </div> -->
-    <a href="#!tournament" style='text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;'
-      class="btn adminB" role="button">Tournament</a>
+    <!-- <a href="#!tournament" style='text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;'
+      class="btn adminB" role="button">Tournament</a> -->
 
-    <!-- <div class="dropdown">
+    <div class="dropdown">
         <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px'
           class="dropbtn btn adminB">Tournaments</button>
         <div class="dropdown-content">
-          <a href="#!live">Live Tournaments</a>
-          <a style='margin-top:12px;' href="#!archivedTourneys">Archived Tournaments</a>
-          <a href="#!upload">Create A New Tournament</a>
+          <a href="#!tournament">Live Tournaments</a>
+          <a style='margin-top:12px;' href="#!archive">Archived Tournaments</a>
           </span>
         </div>
-      </div> -->
+      </div>
   </div>
 </div>
 <!-- end menue div -->
@@ -42,19 +41,19 @@
 <div>
   <h2 style='text-align: center; color: white;font-family:iceland;font-size:80px;'>Rolling Stones' Top 16 Rock Songs All Time</h2>
   <h4 style='text-align: center; color: white;font-family:iceland;font-size:80px;'>Music Tournament</h4>
-  <main id="tournament">
+  <main class="tournament">
     <ul class="round round-1 container-fluid">
-        <div class="row">
-            <div class="col-md-4 tourneyHeader">
-              <H1> Round 1 Matchups</h1>
-            </div>
-            <div class="col-md-4 tourneyHeader">
-              <H1>Voting</H1>
-            </div>
-            <div class="col-md-4 tourneyHeader">
-              <H1>Your Pick</H1>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-4 tourneyHeader">
+          <H1> Round 1 Matchups</h1>
+        </div>
+        <div class="col-md-4 tourneyHeader">
+          <H1>Voting</H1>
+        </div>
+        <div class="col-md-4 tourneyHeader">
+          <H1>Your Pick</H1>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-4">
           <li class="game game-top winner">
@@ -73,43 +72,45 @@
           </div>
         </div>
         <div class="col-md-4">
-            <label class='pulse-button' style='font-size:40px;color: white;'>Song 1</label>&nbsp;
-            <input type="checkbox" ng-model="song1" ng-init="song1=false">
-            <label class='pulse-button' style='font-size:40px;color: white;'>Song 2</label>&nbsp;
-            <input type="checkbox" ng-model="song2" ng-init="song2=false">
+          <label class='pulse-button' style='font-size:40px;color: white;'  ng-hide="song2">Song 1</label>&nbsp;
+          <input type="checkbox" ng-model="song1" ng-hide="song2">
+          <label class='pulse-button' style='font-size:40px;color: white;' ng-hide="song1">Song 2</label>&nbsp;
+          <input type="checkbox" ng-model="song2" ng-hide="song1">
         </div>
         <div class="col-md-4">
-          <ng-if="song1">Song 1 Advances</ng-if>
-          <ng-if="song2">Song 2 Advances</ng-if>
+          <H1 ng-show="song1"><iframe src="https://open.spotify.com/embed/track/3AhXZa8sUQht0UEdBJgpGc" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song2"><iframe src="https://open.spotify.com/embed/track/4pbG9SUmWIvsROVLF0zF9s" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
         </div>
       </div>
 
       <li class="spacer"></li>
 
       <div class="row">
-          <div class="col-md-4">
-            <li class="game game-top winner">
-              <span>8 Seed: Hey Jude</span>
-            </li>
-            <li class="game game-spacer">{{score}}</li>
-            <div class="songPlayer">
-              <iframe src="https://open.spotify.com/embed/track/0aym2LBJBk9DAYuHHutrIl" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-            </div>
-            <li class="game game-spacer">{{score}}</li>
-            <li class="game game-bottom">
-              <span>9 Seed: Smells Like Teen Spirit</span>
-            </li>
-            <div class="songPlayer">
-              <iframe src="https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-            </div>
+        <div class="col-md-4">
+          <li class="game game-top winner">
+            <span>8 Seed: Hey Jude</span>
+          </li>
+          <li class="game game-spacer">{{score}}</li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/0aym2LBJBk9DAYuHHutrIl" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
-          <div class="col-md-4">
-            <H1></H1>
-          </div>
-          <div class="col-md-4">
-            <H1></H1>
+          <li class="game game-spacer">{{score}}</li>
+          <li class="game game-bottom">
+            <span>9 Seed: Smells Like Teen Spirit</span>
+          </li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
         </div>
+        <div class="col-md-4">
+          <H1></H1>
+        </div>
+        <div class="col-md-4">
+          <H1></H1>
+        </div>
+      </div>
 
       <li class="spacer">&nbsp;</li>
 
