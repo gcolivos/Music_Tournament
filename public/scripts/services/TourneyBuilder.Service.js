@@ -1,4 +1,4 @@
-myApp.service('TourneyBuilder', ['$http', '$location', function ($http, $location) {
+googleAuthApp.service('TourneyBuilder', ['$http', '$location', function ($http, $location) {
     console.log('TourneyBuilder Loaded');
 
     var self = this;
