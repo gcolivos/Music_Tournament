@@ -4,6 +4,9 @@ googleAuthApp.controller('tournamentController', ['$http', '$scope', '$timeout',
   var authFactory = AuthFactory;
   vm.tourneyBuilder = TourneyBuilder;
   vm.getTourney = TourneyBuilder.getTourney;
+  vm.voteFunc = function () {
+    alert("Votes submitted!")
+  }
 
   authFactory.isLoggedIn()
     .then(function (response) {
@@ -30,5 +33,5 @@ googleAuthApp.controller('tournamentController', ['$http', '$scope', '$timeout',
       vm.message.type = 'error';
     });
 
-    
+
 }]);
