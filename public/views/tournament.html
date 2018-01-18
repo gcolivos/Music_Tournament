@@ -8,35 +8,16 @@
       class="btn adminB" role="button">Tournament</a> -->
 
     <div class="dropdown">
-        <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px'
-          class="dropbtn btn adminB">Tournaments</button>
-        <div class="dropdown-content">
-          <a href="#!tournament">Live Tournaments</a>
-          <a style='margin-top:12px;' href="#!archive">Archived Tournaments</a>
-          </span>
-        </div>
+      <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px'
+        class="dropbtn btn adminB">Tournaments</button>
+      <div class="dropdown-content">
+        <a href="#!tournament">Live Tournaments</a>
+        <a style='margin-top:12px;' href="#!archive">Archived Tournaments</a>
+        </span>
       </div>
+    </div>
   </div>
 </div>
-<!-- end menue div -->
-
-
-<!-- <div class="form-group" style=' text-align: center;'> -->
-<!-- <label style='font-family:iceland;color: white;' for="usr">Which genre do you want to listen to?</label>
-  </br>
-  <label class='pulse-button' style='font-size:100px;color: white;'>Rock</label>&nbsp;
-  <input type="checkbox" name="" ng-model="sc.rock" value="">
-  <label class='pulse-button' style='font-size:100px;color: white;'>&nbsp;Country</label>&nbsp;
-  <input type="checkbox" name="" ng-model="sc.country" value="">
-  </br>
-  <label class='pulse-button' style='font-size:100px;color: white;'>&nbsp;Hip Hop</label>&nbsp;
-  <input type="checkbox" name="" ng-model="sc.hiphop" value="">
-  <label class='pulse-button' style='font-size:100px;color: white;'>&nbsp;Classical</label>&nbsp;
-  <input type="checkbox" name="" ng-model="sc.classical" value="">
-  <br>
-
-  <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px'
-    class="dropbtn btn adminB">Click To Advance</button> -->
 
 <div>
   <h2 style='text-align: center; color: white;font-family:iceland;font-size:80px;'>Rolling Stones' Top 16 Rock Songs All Time</h2>
@@ -44,43 +25,51 @@
   <main class="tournament">
     <ul class="round round-1 container-fluid">
       <div class="row">
-        <div class="col-md-4 tourneyHeader">
+        <div class="col-md-4 tourneyHeader" style='text-align: center; color: white;font-family:iceland;font-size:40px;'>
           <H1> Round 1 Matchups</h1>
         </div>
-        <div class="col-md-4 tourneyHeader">
+        <div class="col-md-4 tourneyHeader" style='text-align: center; color: white;font-family:iceland;font-size:40px;'>
           <H1>Voting</H1>
         </div>
-        <div class="col-md-4 tourneyHeader">
+        <div class="col-md-4 tourneyHeader" style='text-align: center; color: white;font-family:iceland;font-size:40px;'>
           <H1>Your Pick</H1>
         </div>
       </div>
+
+
       <div class="row">
         <div class="col-md-4">
           <li class="game game-top winner">
-            <span>1 Seed: Like A Rolling Stone</span>
+            <span>
+              <H4>1: Like A Rolling Stone</H4>
+            </span>
           </li>
-          <li class="game game-spacer">{{score}}</li>
+          <li class="game game-spacer"></li>
           <div class="songPlayer">
             <iframe src="https://open.spotify.com/embed/track/3AhXZa8sUQht0UEdBJgpGc" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
-          <li class="game game-spacer">{{score}}</li>
+          <li class="game game-spacer"></li>
           <li class="game game-bottom">
-            <span>16 Seed: I Want To Hold Your Hand</span>
+            <span>
+              <H4>16: I Want To Hold Your Hand</H4>
+            </span>
           </li>
           <div class="songPlayer">
             <iframe src="https://open.spotify.com/embed/track/4pbG9SUmWIvsROVLF0zF9s" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
         </div>
         <div class="col-md-4">
-          <label class='pulse-button' style='font-size:40px;color: white;'  ng-hide="song2">Song 1</label>&nbsp;
-          <input type="checkbox" ng-model="song1" ng-hide="song2">
-          <label class='pulse-button' style='font-size:40px;color: white;' ng-hide="song1">Song 2</label>&nbsp;
-          <input type="checkbox" ng-model="song2" ng-hide="song1">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song16">Seed 1</label>&nbsp;
+          <input type="checkbox" ng-model="song1" ng-hide="song16">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song1">Seed 16</label>&nbsp;
+          <input type="checkbox" ng-model="song16" ng-hide="song1">
         </div>
         <div class="col-md-4">
-          <H1 ng-show="song1"><iframe src="https://open.spotify.com/embed/track/3AhXZa8sUQht0UEdBJgpGc" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          <H1 ng-show="song1">
+            <iframe src="https://open.spotify.com/embed/track/3AhXZa8sUQht0UEdBJgpGc" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
           </H1>
-          <H1 ng-show="song2"><iframe src="https://open.spotify.com/embed/track/4pbG9SUmWIvsROVLF0zF9s" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          <H1 ng-show="song16">
+            <iframe src="https://open.spotify.com/embed/track/4pbG9SUmWIvsROVLF0zF9s" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
           </H1>
         </div>
       </div>
@@ -90,101 +79,243 @@
       <div class="row">
         <div class="col-md-4">
           <li class="game game-top winner">
-            <span>8 Seed: Hey Jude</span>
+            <span>
+              <H4>8 Seed: Hey Jude</H4>
+            </span>
           </li>
-          <li class="game game-spacer">{{score}}</li>
+          <li class="game game-spacer"></li>
           <div class="songPlayer">
             <iframe src="https://open.spotify.com/embed/track/0aym2LBJBk9DAYuHHutrIl" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
-          <li class="game game-spacer">{{score}}</li>
+          <li class="game game-spacer"></li>
           <li class="game game-bottom">
-            <span>9 Seed: Smells Like Teen Spirit</span>
+            <span>
+              <H4>9 Seed: Smells Like Teen Spirit</H4>
+            </span>
           </li>
           <div class="songPlayer">
             <iframe src="https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
           </div>
         </div>
         <div class="col-md-4">
-          <H1></H1>
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song9">Seed 8</label>&nbsp;
+          <input type="checkbox" ng-model="song8" ng-hide="song9">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song8">Seed 9</label>&nbsp;
+          <input type="checkbox" ng-model="song9" ng-hide="song8">
         </div>
         <div class="col-md-4">
-          <H1></H1>
+          <H1 ng-show="song8">
+            <iframe src="https://open.spotify.com/embed/track/0aym2LBJBk9DAYuHHutrIl" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song9">
+            <iframe src="https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
         </div>
       </div>
 
       <li class="spacer">&nbsp;</li>
 
-      <li class="game game-top ">4 Seed: What's Going On
-        <span>{{score}}</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/34b3a3Pz9Jlz0092LMyNAB" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">13 Seed: Yesterday
-        <span>68</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/3BQHpFgAp4l80e1XslIjNI" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+
+      <div class="row">
+        <div class="col-md-4">
+          <li class="game game-top winner">
+            <span>
+              <H4>4 Seed: What's Going On</H4>
+            </span>
+          </li>
+          <li class="game game-spacer"></li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/34b3a3Pz9Jlz0092LMyNAB" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+          <li class="game game-spacer"></li>
+          <li class="game game-bottom">
+            <span>
+              <H4>13 Seed: Yesterday</H4>
+            </span>
+          </li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/3BQHpFgAp4l80e1XslIjNI" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song13">Seed 4</label>&nbsp;
+          <input type="checkbox" ng-model="song4" ng-hide="song13">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song4">Seed 13</label>&nbsp;
+          <input type="checkbox" ng-model="song13" ng-hide="song4">
+        </div>
+        <div class="col-md-4">
+          <H1 ng-show="song4">
+            <iframe src="https://open.spotify.com/embed/track/34b3a3Pz9Jlz0092LMyNAB" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song13">
+            <iframe src="https://open.spotify.com/embed/track/3BQHpFgAp4l80e1XslIjNI" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+        </div>
+      </div>
 
       <li class="spacer">&nbsp;</li>
 
-      <li class="game game-top winner">{{sc.seed5}}
-        <span>64</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/7s25THrKz86DM225dOYwnr" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">{{sc.seed12}}
-        <span>44</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/0KOE1hat4SIer491XKk4Pa" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+      <div class="row">
+        <div class="col-md-4">
+          <li class="game game-top winner">
+            <span>
+              <H4>2 Seed: (Can't Get No) Satisfaction</H4>
+            </span>
+          </li>
+          <li class="game game-spacer"></li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/2PzU4IB8Dr6mxV3lHuaG34" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+          <li class="game game-spacer"></li>
+          <li class="game game-bottom">
+            <span>
+              <H4>15 Seed: Yesterday</H4>
+            </span>
+          </li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/124Y9LPRCAz3q2OP0iCvcJ" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song15">Seed 2</label>&nbsp;
+          <input type="checkbox" ng-model="song2" ng-hide="song15">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song2">Seed 15</label>&nbsp;
+          <input type="checkbox" ng-model="song15" ng-hide="song2">
+        </div>
+        <div class="col-md-4">
+          <H1 ng-show="song2">
+            <iframe src="https://open.spotify.com/embed/track/2PzU4IB8Dr6mxV3lHuaG34" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song15">
+            <iframe src="https://open.spotify.com/embed/track/124Y9LPRCAz3q2OP0iCvcJ" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+        </div>
+      </div>
 
       <li class="spacer">&nbsp;</li>
 
-      <li class="game game-top winner">{{sc.seed2}}
-        <span>54</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/2PzU4IB8Dr6mxV3lHuaG34" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">{{sc.seed15}}
-        <span>52</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/124Y9LPRCAz3q2OP0iCvcJ" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+      <div class="row">
+        <div class="col-md-4">
+          <li class="game game-top winner">
+            <span>
+              <H4>7 Seed: Johnny B Goode</H4>
+            </span>
+          </li>
+          <li class="game game-spacer"></li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/4Hbe0lRKsXtDZ2wQIovz7I" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+          <li class="game game-spacer"></li>
+          <li class="game game-bottom">
+            <span>
+              <H4>10 Seed: What'd I Say (Parts I and II)</H4>
+            </span>
+          </li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/5yQ9iMZXGcr5rlO4hoLsP4" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song10">Seed 7</label>&nbsp;
+          <input type="checkbox" ng-model="song7" ng-hide="song10">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song7">Seed 10</label>&nbsp;
+          <input type="checkbox" ng-model="song10" ng-hide="song7">
+        </div>
+        <div class="col-md-4">
+          <H1 ng-show="song7">
+            <iframe src="https://open.spotify.com/embed/track/4Hbe0lRKsXtDZ2wQIovz7I" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song10">
+            <iframe src="https://open.spotify.com/embed/track/5yQ9iMZXGcr5rlO4hoLsP4" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+        </div>
+      </div>
 
       <li class="spacer">&nbsp;</li>
 
-      <li class="game game-top winner">{{sc.seed7}}
-        <span>65</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/4Hbe0lRKsXtDZ2wQIovz7I" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">{{sc.seed10}}
-        <span>54</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/5yQ9iMZXGcr5rlO4hoLsP4" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+      <div class="row">
+        <div class="col-md-4">
+          <li class="game game-top winner">
+            <span>
+              <H4>3 Seed: Imagine</H4>
+            </span>
+          </li>
+          <li class="game game-spacer"></li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/7pKfPomDEeI4TPT6EOYjn9" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+          <li class="game game-spacer"></li>
+          <li class="game game-bottom">
+            <span>
+              <H4>14 Seed: Blowin' In The Wind</H4>
+            </span>
+          </li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/18GiV1BaXzPVYpp9rmOg0E" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song14">Seed 3</label>&nbsp;
+          <input type="checkbox" ng-model="song3" ng-hide="song14">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song3">Seed 14</label>&nbsp;
+          <input type="checkbox" ng-model="song14" ng-hide="song3">
+        </div>
+        <div class="col-md-4">
+          <H1 ng-show="song3">
+            <iframe src="https://open.spotify.com/embed/track/7pKfPomDEeI4TPT6EOYjn9" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song14">
+            <iframe src="https://open.spotify.com/embed/track/18GiV1BaXzPVYpp9rmOg0E" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+        </div>
+      </div>
 
       <li class="spacer">&nbsp;</li>
 
-      <li class="game game-top winner">{{sc.seed3}}
-        <span>67</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/7pKfPomDEeI4TPT6EOYjn9" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">{{sc.seed14}}
-        <span>63</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/18GiV1BaXzPVYpp9rmOg0E" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">{{sc.seed6}}
-        <span>73</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/5t9KYe0Fhd5cW6UYT4qP8f" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">{{sc.seed11}}
-        <span>61</span>
-      </li>
-      <iframe src="https://open.spotify.com/embed/track/4u9f8hqstB7iITDJNzKhQx" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+      <div class="row">
+        <div class="col-md-4">
+          <li class="game game-top winner">
+            <span>
+              <H4>6 Seed: Good Vibrations</H4>
+            </span>
+          </li>
+          <li class="game game-spacer"></li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/5t9KYe0Fhd5cW6UYT4qP8f" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+          <li class="game game-spacer"></li>
+          <li class="game game-bottom">
+            <span>
+              <H4>11 Seed: My Generation</H4>
+            </span>
+          </li>
+          <div class="songPlayer">
+            <iframe src="https://open.spotify.com/embed/track/45s88Xopo6KvHc0PQ05aGg" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song11">Seed 6</label>&nbsp;
+          <input type="checkbox" ng-model="song6" ng-hide="song11">
+          <label class='pulse-button' style='font-size:30px;color: white;' ng-hide="song6">Seed 11</label>&nbsp;
+          <input type="checkbox" ng-model="song11" ng-hide="song6">
+        </div>
+        <div class="col-md-4">
+          <H1 ng-show="song6">
+            <iframe src="https://open.spotify.com/embed/track/5t9KYe0Fhd5cW6UYT4qP8f" width="300" height="200" frameborder="" allowtransparency="true"></iframe>
+          </H1>
+          <H1 ng-show="song11">
+            <iframe src="https://open.spotify.com/embed/track/45s88Xopo6KvHc0PQ05aGg" width="300" height="200" frameborder="0" allowtransparency="true"></iframe>
+          </H1>
+        </div>
+      </div>
     </ul>
-
+    <div class="row">
+      <div class="col-5 col-md-auto" style="text-align: center">
+        <a href="#!users">
+          <img src="/public/assets/home-vote-button.png" />
+        </a>
+        </section>
+      </div>
+    </div>
+  </main>
 </div>
-</div>
-</main>

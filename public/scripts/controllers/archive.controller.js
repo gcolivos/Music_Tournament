@@ -1,9 +1,9 @@
-googleAuthApp.controller('archiveController', ['$http', '$scope', '$timeout', 'AuthFactory', '$location', 'archiveService', function ($http, $scope, $timeout, AuthFactory, $location, ArchiveService) {
+googleAuthApp.controller('archiveController', ['$http', '$scope', '$timeout', 'AuthFactory', '$location', 'archiveService', function ($http, $scope, $timeout, AuthFactory, $location, archiveService) {
   console.log('this is the tournamentController');
   var vm = this;
   var authFactory = AuthFactory;
-  vm.archiveTourneys = archiveTourneys;
-  vm.getArchives = archiveTourneys.getArchives;
+  vm.archiveService = archiveService;
+  vm.getArchives = archiveService.getArchives;
 
   authFactory.isLoggedIn()
     .then(function (response) {
@@ -16,7 +16,7 @@ googleAuthApp.controller('archiveController', ['$http', '$scope', '$timeout', 'A
         vm.id = response.data.id;
         vm.image = response.data.image;
 
-        $location.path('/tournament');
+        $location.path('/archive');
 
 
       } else { // is not logged in on server

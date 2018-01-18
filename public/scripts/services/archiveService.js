@@ -1,5 +1,5 @@
 googleAuthApp.service('archiveService', ['$http', '$location', function ($http, $location) {
-    console.log('TourneyBuilder Loaded');
+    console.log('ArchiveTourneys Service Loaded');
 
     var self = this;
 
