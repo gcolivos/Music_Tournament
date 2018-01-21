@@ -1,6 +1,17 @@
 Music Tournament
 Guillermo C Olivos
-December 17, 2017 | Version 1
+January 20, 2017 | Version 2
+
+This is an on-going project I seek to continue to build out on my GitHub in the coming months. At this point, my solo project presentation at Prime has occured, and was presented using hardcoded songs in a hardcoded tourament. However, Spotify oAuth2.0 is implemented!
+
+Please check out the /public/assets/wireframe folder for views of the planned future functionality.
+1/20/18
+
+
+
+Scope (12/17/17)
+
+
 Document Objectives
 The purpose of this document is to provide detailed documentation about the Music Tournament application I will be building for my Prime Solo Project. It will include such details as:
  
@@ -12,44 +23,7 @@ Application Overview
 Music Tournament is a full-stack web application that allows you to create dynamic music tournaments that populate music tracks in an easy to listen to and score fashion. It provides an interface to curate songs to compete in the tournament. It allows you to listen to pairs of songs in a matchup and provide votes while matchups are “live”, and then tabulates results and advances winners.
 
 Views
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-On the left is a search bar to look up songs. Clicking the arrow adds the song to the playlist on the right, which populates as you fill it out. The playlist gets created in the Spotify profile of whomever creates the tournament, so if you decide on some songs but not all of them and want to come back to it later, that could be an option.
-
-
-
-
-The days/round thing is a stretch goal, for MVP I’m going to set it up so admin’s can advance tournament rounds.
-
-
-
-
-
-Above is a modal window that pops up when you go to score a matchup
-
-Once a song advances, you can click on where it used to be in the bracket to reveal this page, which will be mapped to a ‘/:id’ that maps to the matchup id’s from my schema
-
-
-
-
-
-Example of Archived Tournament:
-
-Project Features and Schedule
-Features are completed, working features from the above listing. Think carefully about the order you will need to build things and when you expect to be done with them. The purpose of this section is to consider the overall timeline and how much work really needs to get done. The Due Date is your best guess and may change. (There should be many more than 3 features.)
+See Wireframe Folder In Assets for images
  
 Feature
 Estimated Due Date
