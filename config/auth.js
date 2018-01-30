@@ -8,7 +8,7 @@
   */
   var authConfigs = {
     spotifyAuth: {
-      clientId: process.env.SPOTIFY_API_KEY,
+      clientID: process.env.SPOTIFY_API_KEY,
       clientSecret: process.env.SPOTIFY_SECRET,
       callbackUrl: process.env.SPOTIFY_CALLBACK_URL,
     },
